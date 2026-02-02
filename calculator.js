@@ -73,6 +73,7 @@ btn.forEach((button) => {
     }
     if (value === "=") {
       const result = operate(fistNumber, operator, secondNumber);
+      if (result === undefined) return;
       display.textContent = result;
       fistNumber = result;
       operator = "";
