@@ -38,6 +38,10 @@ const operate = (fistNumber, operator, secondNumber) => {
   if (operator === "/") {
     if (secondNumber === 0) {
       alert("Can't divide by zero");
+      fistNumber = 0;
+      secondNumber = 0;
+      operator = "";
+      display.textContent = "";
       return;
     }
     return Divide(fistNumber, secondNumber);
