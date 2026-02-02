@@ -1,10 +1,9 @@
 const btn = document.querySelectorAll("button");
 const display = document.querySelector("#display");
 
-let fistNumber = "";
+let fistNumber = 0;
 let operator = "";
-let secondNumber = "";
-
+let secondNumber = 0;
 const Add = (fistNumber, secondNumber) => {
   const result = fistNumber + secondNumber;
   return result;
@@ -76,7 +75,7 @@ btn.forEach((button) => {
       const result = operate(fistNumber, operator, secondNumber);
       display.textContent = result;
       fistNumber = result;
-      operator = 0;
+      operator = "";
       secondNumber = 0;
     }
   });
