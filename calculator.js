@@ -37,11 +37,7 @@ const operate = (fistNumber, operator, secondNumber) => {
   if (operator === "/") {
     if (secondNumber === 0) {
       alert("Can't divide by zero");
-      fistNumber = 0;
-      secondNumber = 0;
-      operator = "";
-      display.textContent = "";
-      return;
+      return null;
     }
     return Divide(fistNumber, secondNumber);
   }
@@ -73,7 +69,16 @@ btn.forEach((button) => {
     }
     if (value === "=") {
       const result = operate(fistNumber, operator, secondNumber);
-      if (result === undefined) return;
+
+      if (result === null) {
+        // reset clean state
+        fistNumber = 0;
+        secondNumber = 0;
+        operator = "";
+        display.textContent = "";
+        return;
+      }
+
       display.textContent = result;
       fistNumber = result;
       operator = "";
